@@ -46,32 +46,14 @@ export default makeStyles({
         color:'white',
         fontFamily: 'Noto Sans',
         fontWeight:600,
-        // textTransform:'capitalize',
+        textTransform:'capitalize',
         marginTop:'0.5rem',
         marginBottom:'2.04125rem',
         borderRadius:'0.5rem',
         textDecoration:'none',
 
-
     },
-    socials:{
-        marginTop:'1.406875rem',
-        display:'flex',
-        marginBottom:'2.09375rem'
-        
-    },
-    socials_border:{
-        width:'42px',
-        height:'42px',
-        border: '1px solid #828282',
-        borderRadius:'50%',
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center',
-        marginRight:'1.215rem',
-        
-
-    }
+    
 })
 
 

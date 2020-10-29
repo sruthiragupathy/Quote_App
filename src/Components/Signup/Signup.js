@@ -7,20 +7,15 @@ import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Button from '@material-ui/core/Button';
 
-
-import google from "../../assets/svgs/google.svg"
-import facebook from "../../assets/svgs/facebook.svg"
-import twitter from "../../assets/svgs/twitter.svg"
-import github from "../../assets/svgs/github.svg"
-
+import DnsIcon from '@material-ui/icons/Dns';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 
 
-
 import useStyles from "./Styles";
 
-const Login = () =>{
+const Signup = () =>{
+    const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [error,setError] = useState(null);
@@ -34,6 +29,9 @@ const Login = () =>{
       }
       else if(name=="userPassword"){
         setPassword(value)
+      }
+      else{
+          setName(value);
       }
 
       // console.log({email});
@@ -50,6 +48,21 @@ const Login = () =>{
         <div className={classes.login}>
             Login
         </div>
+        <TextField 
+        className = {classes.field}
+        name="userName"
+        value={email}
+        onChange = {onChangeHandler}
+        variant="outlined" 
+        InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <DnsIcon style={{color:'#828282'}}/>
+              </InputAdornment>
+            ),
+          }}
+          placeholder = "Name"
+        />
         <TextField 
         className = {classes.field}
         name="userEmail"
@@ -81,32 +94,15 @@ const Login = () =>{
           }}
           placeholder = "Password"
         />
+        
         <Button variant="contained" className = {classes.btn}>
-            Login
+            SIGN UP
         </Button>
-        <Typography style={{color:'#828282',fontFamily: 'Noto Sans',}} variant="subtitle1" component="div">or continue with these social profile</Typography>
-        <div className={classes.socials}>
-        <div className={classes.socials_border}>
-            <img src={google} alt="google"/>
-        </div>
-        
-        <div className={classes.socials_border}>
-            < img src={facebook} alt="facebook"/>
-        </div>
-         <div className={classes.socials_border}>
-            <img src={twitter} alt="twitter"/>
-        </div>
-        <div className={classes.socials_border}>
-            <img src={github} alt="github"/>
-        </div>
         
         
-        </div>
-        <Typography style={{color:'#828282',fontFamily: 'Noto Sans',}} variant="subtitle1" component="div">Don't have an account? <Link to = "/signup" ><a href="#" style={{color:"blue 1",textDecoration:"none"}}>Register</a></Link></Typography>
-
         </Grid>
         </div>
     );
 }
 
-export default Login;
+export default Signup;
